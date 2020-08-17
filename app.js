@@ -6,7 +6,7 @@ const app = () => {
   const sounds = document.querySelectorAll(".sound-picker button");
   const timeDisplay = document.querySelector(".time-display");
   const outlineLength = outline.getTotalLength();
-  console.log(outlineLength);
+  let fakeDuration = 600;
 };
 
 app();
