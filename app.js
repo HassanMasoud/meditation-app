@@ -5,6 +5,7 @@ const app = () => {
   const video = document.querySelector(".vid-container video");
   const sounds = document.querySelectorAll(".sound-picker button");
   const timeDisplay = document.querySelector(".time-display");
+  const timeSelect = document.querySelectorAll(".time-select button");
   const outlineLength = outline.getTotalLength();
   let fakeDuration = 600;
 
@@ -14,6 +15,16 @@ const app = () => {
   play.addEventListener("click", () => {
     checkPlaying(song);
   });
+
+  timeSelect.forEach((option) => {
+    option.addEventListener("click", function () {
+      fakeDuration = this.getAttribute("data-time");
+      timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
+        fakeDuration % 60
+      )}`;
+    });
+  });
+
   const checkPlaying = (song) => {
     if (song.paused) {
       song.play();
