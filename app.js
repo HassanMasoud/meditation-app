@@ -33,6 +33,8 @@ const app = () => {
     let minutes = Math.floor(elapsed / 60);
     let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
     outline.style.strokeDashoffset = progress;
+
+    timeDisplay.textContent = `${minutes}:${seconds}`;
   };
 };
 
